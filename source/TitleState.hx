@@ -68,6 +68,7 @@ class TitleState extends MusicBeatState
 		}
 		
 		PlayerSettings.init();
+		
 
 		#if windows
 		DiscordClient.initialize();
@@ -434,10 +435,16 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = 'Shoutouts Tom Fulp';
 			// credTextShit.screenCenter();
 			case 9:
-				createCoolText([curWacky[0]]);
+				if (Main.watermarks)
+					createCoolText(['Extra Keys Mod', 'by']);
+				else
+					createCoolText([curWacky[0]]);
 			// credTextShit.visible = true;
 			case 11:
-				addMoreText(curWacky[1]);
+				if (Main.watermarks)
+					addMoreText('TheZoroForce');
+				else
+					addMoreText(curWacky[1]);
 			// credTextShit.text += '\nlmao';
 			case 12:
 				deleteCoolText();
